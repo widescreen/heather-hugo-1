@@ -1,11 +1,11 @@
 {{ partial "head.html" . }}
 <main class="posts">
+  {{ range .Data.Pages }}
   <article class="post">
-    {{ range .Data.Pages }}
-    <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    <a href="{{ .Permalink }}"><h1>{{ .Title }}</h1></a>
     <p>{{ .Summary }}</p>
-    <p class="small"><a href="{{ .Permalink }}">Read More »</a></p>
-    {{ end }}
+    <small><a href="{{ .Permalink }}">Read More »</a></small>
   </article>
+  {{ end }}
 </main>
 {{ partial "foot.html" . }}
